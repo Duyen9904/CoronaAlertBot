@@ -82,7 +82,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This sequence is for saving a country name from user input" DisplayName="Input" sap:VirtualizedContainerService.HintSize="828.8000000000001,712" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This sequence is for saving a country name from user input" DisplayName="Input" sap:VirtualizedContainerService.HintSize="1152,712" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -90,7 +90,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message -  Enter input dialog" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Enter the input dialog&quot;]" />
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="This activity is for input a country to get the data from table" DisplayName="Input Country" sap:VirtualizedContainerService.HintSize="416,317.6" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Country" Title="Enter a Country">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" sap2010:Annotation.AnnotationText="This activity is for input a country from user then looking for the value from extracted table" DisplayName="Input Country" sap:VirtualizedContainerService.HintSize="416,317.6" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Country" Title="Enter a Country">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[out_strCountry]</OutArgument>
       </ui:InputDialog.Result>

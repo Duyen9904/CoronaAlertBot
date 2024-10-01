@@ -107,14 +107,15 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This sequence is for open browser and access to COVID - Corona Statistics - Worldometer by using Ultraviewer " DisplayName="Ultraview" sap:VirtualizedContainerService.HintSize="828.8000000000001,1350.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This sequence is for open browser and access to COVID - Corona Statistics - Worldometer by using Ultraviewer " DisplayName="Ultraview" sap:VirtualizedContainerService.HintSize="1152,1307.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" ScrollOffset="{x:Null}" Server="{x:Null}" sap2010:Annotation.AnnotationText="this activity is for taking some screens to executing some activities such as:&#xD;&#xA;1. Click the Chrome icon to open browser.&#xD;&#xA;2. Type the target web link in the chrome input." ApiKey="BdZbMojstR9d6bFweLZuidOpAXOzhoGXVRdN4rYUUmHgF0wQMft0cQvJvjE2U5APLM9laDfHXTOuq5jIfhFAEA==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="d221d4da-4a29-461e-9d12-7690a07347e5" DisplayName="CV Screen Scope -  Take screens for executing" sap:VirtualizedContainerService.HintSize="484.8,1296" sap2010:WorkflowViewState.IdRef="CVScope_2" SendOnPremData="False" Version="V6">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start type into google chrome&quot;]" />
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" ScrollOffset="{x:Null}" Server="{x:Null}" sap2010:Annotation.AnnotationText="this activity is for taking some screens to executing some activities such as:&#xA;1. Click the Chrome icon to open browser.&#xA;2. Type the target web link in the chrome input." ApiKey="BdZbMojstR9d6bFweLZuidOpAXOzhoGXVRdN4rYUUmHgF0wQMft0cQvJvjE2U5APLM9laDfHXTOuq5jIfhFAEA==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="d221d4da-4a29-461e-9d12-7690a07347e5" DisplayName="CV Screen Scope -  Take screens for executing" sap:VirtualizedContainerService.HintSize="433.6,912.8" sap2010:WorkflowViewState.IdRef="CVScope_2" SendOnPremData="False" Version="V6">
       <p:CVScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -124,7 +125,7 @@
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Default="https://www.worldometers.info/coronavirus/" Name="strUrl" />
             </Sequence.Variables>
-            <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="This activity is for clicking the chrome icon." ClickType="CLICK_DOUBLE" Descriptor="[&quot;Target: Icon (496,744,27,27)&quot;]" DesignTimeCacheId="9a52421f-8f5a-46fa-8e28-ec3dafcfe7a6" DesignTimeScaleFactor="1.25" DisplayName="CV Click - Chrome Icon" sap:VirtualizedContainerService.HintSize="451.2,249.6" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="1b8dfb3f48cb8ea23b6a2c50a7870ea1" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
+            <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="This activity is for clicking the chrome icon." ClickType="CLICK_DOUBLE" Descriptor="[&quot;Target: Icon (496,744,27,27)&quot;]" DesignTimeCacheId="9a52421f-8f5a-46fa-8e28-ec3dafcfe7a6" DesignTimeScaleFactor="1.25" DisplayName="CV Click - Chrome Icon" sap:VirtualizedContainerService.HintSize="400,249.6" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="1b8dfb3f48cb8ea23b6a2c50a7870ea1" KeyModifiers="None" MouseButton="BTN_LEFT" NumberOfScrolls="2" ScrollDirection="None" Version="V6">
               <p:CvClickWithDescriptor.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -158,7 +159,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </p:CvClickWithDescriptor>
-            <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="this activity is for typing the corona web in the chrome input." ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (129,48,1067,39)&quot; +&#xA;&quot;Anchor: Text '©' (92,59,18,17)&quot;]" DesignTimeCacheId="d221d4da-4a29-461e-9d12-7690a07347e5" DesignTimeScaleFactor="1.25" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="451.2,262.4" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_2" InformativeScreenshot="1c19ca88c0b5fd9aa6ce77041e31a697" NumberOfScrolls="2" ScrollDirection="None" Text="[strUrl + &quot;[k(enter)]&quot;]" Version="V6">
+            <p:CvTypeIntoWithDescriptor DelayScreenshotAfterScroll="{x:Null}" DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="This activity is for typing the corona web in the chrome input." ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (129,48,1067,39)&quot; +&#xA;&quot;Anchor: Text '©' (92,59,18,17)&quot;]" DesignTimeCacheId="d221d4da-4a29-461e-9d12-7690a07347e5" DesignTimeScaleFactor="1.25" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,253.6" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_2" InformativeScreenshot="1c19ca88c0b5fd9aa6ce77041e31a697" NumberOfScrolls="2" ScrollDirection="None" Text="[strUrl + &quot;[k(enter)]&quot;]" Version="V6">
               <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
                 <uc:CvDescriptor Id="0d1f45cb-ee85-4e88-9a12-bd0bfa9c9c5b">
                   <uc:CvDescriptor.Anchors>
@@ -187,40 +188,6 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </p:CvTypeIntoWithDescriptor>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="451.2,383.2" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,281.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="this activity is for clicking enter after finishing typing web url" DisplayName="Send Hotkey 'Click the enter'" sap:VirtualizedContainerService.HintSize="382.4,221.6" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
-                    <ui:SendHotkey.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3aa2447a-ad82-4652-b9a2-43c851b5285a" InformativeScreenshot="da037c79df41630290fe0576b121d040" Selector="&lt;wnd app='ultraviewer_desktop.exe' cls='ThunderRT6FormDC' title='DUYEN (82362878) - UltraViewer' /&gt;&lt;wnd cls='ThunderRT6PictureBoxDC' idx='3' /&gt;">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:SendHotkey.Target>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:SendHotkey>
-                </Sequence>
-              </ui:CommentOut.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CommentOut>
           </Sequence>
         </ActivityAction>
       </p:CVScope.Body>
@@ -757,5 +724,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </p:CVScope>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;End type into google chrome&quot;]" />
   </Sequence>
 </Activity>

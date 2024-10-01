@@ -119,14 +119,15 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This sequence is for extracting data table from the website and save them to variables&#xD;&#xA;Steps will take: &#xD;&#xA;1. Scrolling down to find the table&#xD;&#xA;2. Extracting the table&#xD;&#xA;3. Assign the value of total deaths, total cases, total recovered for sending email" DisplayName="ExtractDataTable" sap:VirtualizedContainerService.HintSize="828.8000000000001,1967.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This sequence is for extracting data table from the website and save them to variables&#xA;Steps will take: &#xA;1. Scrolling down to find the table&#xA;2. Extracting the table&#xA;3. Assign the value of total deaths, total cases, total recovered for sending email" DisplayName="ExtractDataTable" sap:VirtualizedContainerService.HintSize="1152,2190.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" ScrollOffset="{x:Null}" Server="{x:Null}" sap2010:Annotation.AnnotationText="This activity use corona url to extract data table then send information about covid for all provided email" ApiKey="BdZbMojstR9d6bFweLZuidOpAXOzhoGXVRdN4rYUUmHgF0wQMft0cQvJvjE2U5APLM9laDfHXTOuq5jIfhFAEA==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="7a379b04-c2a3-46c9-8003-de1a791c8951" DisplayName="CV Screen Scope Browser Corona" sap:VirtualizedContainerService.HintSize="646.4,1868" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V6">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="646.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Start to extract data table&quot;]" />
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ScopeId="{x:Null}" ScrollOffset="{x:Null}" Server="{x:Null}" sap2010:Annotation.AnnotationText="This activity use corona url to extract data table then send information about covid for all provided email" ApiKey="BdZbMojstR9d6bFweLZuidOpAXOzhoGXVRdN4rYUUmHgF0wQMft0cQvJvjE2U5APLM9laDfHXTOuq5jIfhFAEA==" CvMethod="ElementDetection, OCR" DesignTimeCacheId="7a379b04-c2a3-46c9-8003-de1a791c8951" DisplayName="CV Screen Scope Browser Corona" sap:VirtualizedContainerService.HintSize="646.4,1751.2" sap2010:WorkflowViewState.IdRef="CVScope_1" SendOnPremData="False" Version="V6">
       <p:CVScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -150,28 +151,34 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </p:CvExtractDataTableWithDescriptor>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="This activity use foreach for check if the currentCountry is match with the country of user then send the email to all provided emails about total cases, total deaths, total recovered." DataTable="[out_Data]" DisplayName="For Each Row in out_Data Data Table" sap:VirtualizedContainerService.HintSize="612.8,1212.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="This activity use foreach for check if the currentCountry is match with the country of user then send the email to all provided emails about total cases, total deaths, total recovered." DataTable="[out_Data]" DisplayName="For Each Row in out_Data Data Table" sap:VirtualizedContainerService.HintSize="612.8,1087.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="579.2,980" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence sap2010:Annotation.AnnotationText="This body activity use to check if country name match with user input and assign to argument values for preparing send email" DisplayName="Body" sap:VirtualizedContainerService.HintSize="579.2,854.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="545.6,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[CurrentRow(0).ToString + CurrentRow(1).ToString]" />
-                    <If Condition="[CurrentRow(1).ToString.ToLower = in_Country.ToLower]" DisplayName="If - input name found" sap:VirtualizedContainerService.HintSize="545.6,580" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If sap2010:Annotation.AnnotationText="It checks whether the value in CurrentRow(1).ToString.ToLower matches the value in the input variable in_CountryName. This condition is case-insensitive as it uses the .ToLower() method to convert the string to lowercase." Condition="[CurrentRow(1).ToString.ToLower = in_Country.ToLower]" DisplayName="If - input name found" sap:VirtualizedContainerService.HintSize="545.6,750.4" sap2010:WorkflowViewState.IdRef="If_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,320" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <Sequence sap2010:Annotation.AnnotationText="This branch is executed if the condition is true (i.e., the country name is found)." DisplayName="Then - Assign Value" sap:VirtualizedContainerService.HintSize="512,439.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,212" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                          <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assign the value of extracted table to out_TotalCases, out_TotalDeaths, out_TotalRecovered" DisplayName="Multiple Assign From Extracted Table" sap:VirtualizedContainerService.HintSize="478.4,256" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                             <ui:MultipleAssign.AssignOperations>
                               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -200,8 +207,19 @@
                                 </ui:AssignOperation>
                               </scg:List>
                             </ui:MultipleAssign.AssignOperations>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
                           </ui:MultipleAssign>
-                          <ui:Break sap:VirtualizedContainerService.HintSize="478.4,48" sap2010:WorkflowViewState.IdRef="Break_1" />
+                          <ui:Break sap2010:Annotation.AnnotationText="Break the loop when found the matching country with user input" sap:VirtualizedContainerService.HintSize="478.4,92" sap2010:WorkflowViewState.IdRef="Break_1">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:Break>
                         </Sequence>
                       </If.Then>
                       <If.Else>
@@ -214,7 +232,6 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <ui:LogMessage DisplayName="Log Message - current row" sap:VirtualizedContainerService.HintSize="545.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Fatal" Message="[CurrentRow(1).ToString]" />
                   </Sequence>
                 </ActivityAction>
               </ui:ForEachRow.Body>
@@ -1154,5 +1171,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </p:CVScope>
+    <ui:LogMessage DisplayName="Log Message - current row" sap:VirtualizedContainerService.HintSize="646.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;The ending of extract table&quot;]" />
   </Sequence>
 </Activity>
